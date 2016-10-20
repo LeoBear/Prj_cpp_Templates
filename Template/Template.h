@@ -22,20 +22,21 @@ template<class T>
 ÑVector<T>::ÑVector()
 {
 	size = 0;
-	data = NULL;
+	data = nullptr;
 }
 
 template<class T>
 ÑVector<T>::ÑVector(size_t s)
 {
-	data = new T (s);
+//	data = new T(s);
+	data = new T[s];
 	size = s;
 }
 
 template<class T>
 ÑVector<T>::~ÑVector()
 {
-	if (NULL != data)
+	if (nullptr != data)
 	{
 		delete data;
 	}
@@ -44,7 +45,7 @@ template<class T>
 template<class T>
 void ÑVector<T>::fill(T value)
 {
-	if (NULL == data)
+	if (nullptr == data)
 	{
 		return;
 	}

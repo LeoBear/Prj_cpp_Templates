@@ -18,9 +18,18 @@
     <ClInclude Include="Template.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShallowChecks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SortTracer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SortTracer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
