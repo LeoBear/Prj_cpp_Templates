@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Template.h"
 #include "ShallowChecks.h"
+#include "SortTracer.h"
 
 //___Example 1___//
 //template<typename T, size_t s>
@@ -19,10 +20,14 @@ Client clientObject;
 
 void main()
 {
+	//___Example 1___//
 	const size_t size = 5;
-	ÑVector<int> v = makeVector<int>( 7, size );
-	int a = v[2];
+//	ÑVector<int> v = makeVector<int>( 7, size );
+//	int a = v[2];
 
-//	shell(clientObject);
+	//___Example 2___//
+	//	shell(clientObject);
 
+	//___Example 3___//
+	TrcStdSort();
 }
