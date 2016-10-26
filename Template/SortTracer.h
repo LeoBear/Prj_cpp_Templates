@@ -1,3 +1,6 @@
+#ifndef __SORT_TRACER_H__
+#define __SORT_TRACER_H__
+#pragma once
 
 #include <iostream>
 
@@ -112,3 +115,4 @@ class SortTracer
 
 void TrcStdSort();
 
+#endif

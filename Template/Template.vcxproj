@@ -121,6 +121,7 @@
     <ClInclude Include="ShallowChecks.h" />
     <ClInclude Include="SortTracer.h" />
     <ClInclude Include="Template.h" />
+    <ClInclude Include="TypeDef.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

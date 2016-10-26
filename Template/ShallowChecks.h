@@ -1,3 +1,6 @@
+#ifndef __SHALLOW_CHECKS_H__
+#define __SHALLOW_CHECKS_H__
+#pragma once
 
 template <typename T>
 inline void ignore(T const&)
@@ -43,3 +46,4 @@ class Client
 		typedef int Index;
 };
 
+#endif
