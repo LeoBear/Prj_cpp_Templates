@@ -19,7 +19,7 @@ void fooObj(T const obj)
 }
 
 template <typename T1, typename T2, typename T3>
-void foo(T1* a, T2 b, T3 c)
+void foo(T1 a, T2 b, T3 c)
 {
 	std::cout << std::endl;
 
@@ -31,7 +31,7 @@ void foo(T1* a, T2 b, T3 c)
 	//std::cout <<"is_pointer T1 : "<< std::is_pointer<T1*>::value << std::endl;
 	//std::cout << std::endl;
 
-	std::cout << (std::is_pointer<T1*>::value ? "pointer" : "not pointer") << ", value = " << *a << "; type : " << typeid(a).name() << std::endl;
+	std::cout << (std::is_pointer<T1>::value ? "pointer" : "not pointer") << ", value = " << a << "; type : " << typeid(a).name() << std::endl;
 	std::cout << (std::is_pointer<T2>::value ? "pointer" : "not pointer") << ", value = " << b << "; type : " << typeid(b).name() << std::endl;
 	std::cout << (std::is_pointer<T3>::value ? "pointer" : "not pointer") << ", value = " << c << "; type : " << typeid(c).name() << std::endl;
 }
