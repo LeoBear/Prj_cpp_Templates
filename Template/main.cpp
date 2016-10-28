@@ -35,11 +35,15 @@ void main()
 //	TrcStdSort();
 
 	//___Example 4___
-	fooRef("hello");
-	fooObj("hello");
+	//fooRef("hello");
+	//fooObj("hello");
 
 	int * a = new int(5);
 	double b = 10.0;
 	std::string c = "bla bla";
 	foo(a, b, c);
+
+	//double res1 = sum(1, 1, 1, 1, 1);
+	//double res2 = sum(2, 2, 2.2, 2.1, 2.0);
+
 }

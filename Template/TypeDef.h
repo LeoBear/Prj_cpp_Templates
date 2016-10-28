@@ -17,9 +17,10 @@ void fooObj(T const obj)
 {
 	std::cout << "obj in fooObj(T const): " << typeid(obj).name() << std::endl;
 }
+//________________________________________________________________________________________
 
 template <typename T1, typename T2, typename T3>
-void foo(T1 a, T2 b, T3 c)
+void fooTest(T1 a, T2 b, T3 c)
 {
 	std::cout << std::endl;
 
@@ -35,6 +36,33 @@ void foo(T1 a, T2 b, T3 c)
 	std::cout << (std::is_pointer<T2>::value ? "pointer" : "not pointer") << ", value = " << b << "; type : " << typeid(b).name() << std::endl;
 	std::cout << (std::is_pointer<T3>::value ? "pointer" : "not pointer") << ", value = " << c << "; type : " << typeid(c).name() << std::endl;
 }
+//________________________________________________________________________________________
+
+template <typename T>
+void foo(T obj)
+{
+	std::cout << (std::is_pointer<T>::value ? "pointer" : "not pointer") << ", value = " << obj << "; type : " << typeid(obj).name() << std::endl;
+}
+
+template <typename T, typename... Rest>
+void foo(T t, Rest... rest)
+{
+	foo(rest...);
+}
+//________________________________________________________________________________________
+
+template <typename T>
+double sum(T t)
+{
+	return t;
+}
+
+template <typename T, typename... Rest>
+double sum(T t, Rest... rest)
+{
+	return t + sum(rest...);
+}
+//________________________________________________________________________________________
 
 #endif
 
