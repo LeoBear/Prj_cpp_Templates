@@ -37,16 +37,40 @@ void fooTest(T1 a, T2 b, T3 c)
 	std::cout << (std::is_pointer<T3>::value ? "pointer" : "not pointer") << ", value = " << c << "; type : " << typeid(c).name() << std::endl;
 }
 //________________________________________________________________________________________
+template <typename T>
+bool isPtr(T obj)
+{
+	return false;
+}
 
 template <typename T>
-void foo(T obj)
+bool isPtr(T* obj)
 {
-	std::cout << (std::is_pointer<T>::value ? "pointer" : "not pointer") << ", value = " << obj << "; type : " << typeid(obj).name() << std::endl;
+	return true;
+}
+
+template <typename T>
+T getValue(T obj)
+{
+	return obj;
+}
+
+template <typename T>
+T getValue(T* obj)
+{
+	return *obj;
+}
+
+template <typename T>
+void foo(T t)
+{
+	std::cout << (isPtr(t) ? "pointer" : "not pointer") << ", value = " << getValue(t) << "; type : " << typeid(t).name() << std::endl;
 }
 
 template <typename T, typename... Rest>
 void foo(T t, Rest... rest)
 {
+	std::cout << (isPtr(t) ? "pointer" : "not pointer") << ", value = " << getValue(t) << "; type : " << typeid(t).name() << std::endl;
 	foo(rest...);
 }
 //________________________________________________________________________________________
