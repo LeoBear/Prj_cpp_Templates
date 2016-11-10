@@ -119,6 +119,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ShallowChecks.h" />
+    <ClInclude Include="SharedPointer.h" />
+    <ClInclude Include="SmartPtr_TTP.h" />
     <ClInclude Include="SortTracer.h" />
     <ClInclude Include="Template.h" />
     <ClInclude Include="TypeDef.h" />

@@ -5,6 +5,7 @@
 #include "Template.h"
 #include "SortTracer.h"
 #include "ShallowChecks.h"
+#include "SharedPointer.h"
 
 //___Example 1___
 //template<typename T, size_t s>
@@ -38,12 +39,15 @@ void main()
 	//fooRef("hello");
 	//fooObj("hello");
 
-	int * a = new int(5);
-	double b = 10.0;
-	std::string c = "bla bla";
-	foo(a, b, c);
+	//int * a = new int(5);
+	//double b = 10.0;
+	//std::string c = "bla bla";
+	//foo(a, b, c);
 
 	//double res1 = sum(1, 1, 1, 1, 1);
 	//double res2 = sum(2, 2, 2.2, 2.1, 2.0);
 
+	//___Example 5___
+//	SharedPointer<int> p = new int(5);
+	SharedPointerAlloc<int> pAlloc( new int(5), 4 );
 }

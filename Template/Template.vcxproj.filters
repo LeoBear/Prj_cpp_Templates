@@ -27,6 +27,12 @@
     <ClInclude Include="TypeDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SharedPointer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPtr_TTP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
