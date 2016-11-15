@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+// Example of the template with one parameter
 template < typename T >
 class SharedPointer
 {
@@ -67,6 +68,7 @@ SharedPointer<T>::SharedPointer(const SharedPointer& ptr)
 
 //________________________________________________________________________________________
 
+// Example of the template with second template parameter
 template < typename T, template<typename ARG> class ALLOC = std::allocator >
 class SharedPointerAlloc
 {
@@ -101,39 +103,7 @@ public:
 
 		std::cout << "~SharedPointerAlloc(): count = " << count << std::endl;
 	}
-
-	//T& operator=(const SharedPointerAlloc& ptr);
-	//SharedPointerAlloc(const SharedPointerAlloc& ptr);
-	//T* operator->() { return ptr; }
-	//T& operator*() { return *ptr; }
-
-	//T* Get() { return ptr; }
-	//int GetCount() { return ptr; }
 };
-
-//________________________________________________________________________________________
-//template<class T>
-//T& SharedPointerAlloc<T>::operator=(const SharedPointerAlloc& ptr)
-//{
-//	this->ptr = ptr.ptr;
-//	ptr.count++;
-//	this->count = ptr.count;
-//
-//	std::cout << "inside assignment operator\n";
-//
-//	return *this;
-//}
-
-//________________________________________________________________________________________
-//template<class T>
-//SharedPointerAlloc<T>::SharedPointerAlloc(const SharedPointerAlloc& ptr)
-//{
-//	this->ptr = ptr.ptr;
-//	ptr.count++;
-//	this->count = ptr.count;
-//
-//	std::cout << "inside copy constructor\n";
-//}
 
 //________________________________________________________________________________________
 

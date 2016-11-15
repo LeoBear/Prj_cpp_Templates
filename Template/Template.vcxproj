@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="RestrictedTmplExpansion.h" />
     <ClInclude Include="ShallowChecks.h" />
     <ClInclude Include="SharedPointer.h" />
     <ClInclude Include="SmartPtr_TTP.h" />

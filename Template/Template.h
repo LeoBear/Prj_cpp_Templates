@@ -2,6 +2,7 @@
 #define __TEMPLATE_H__
 #pragma once
 
+// Example of the template class with one parameter
 template <class T>
 class ÑVector
 {
@@ -17,6 +18,7 @@ class ÑVector
 		unsigned int getSize();
 		T& operator [](int);
 };
+//________________________________________________________________________________________
 
 template<class T>
 ÑVector<T>::ÑVector()
@@ -24,6 +26,7 @@ template<class T>
 	size = 0;
 	data = nullptr;
 }
+//________________________________________________________________________________________
 
 template<class T>
 ÑVector<T>::ÑVector(size_t s)
@@ -32,6 +35,7 @@ template<class T>
 	data = new T[s];
 	size = s;
 }
+//________________________________________________________________________________________
 
 template<class T>
 ÑVector<T>::~ÑVector()
@@ -41,6 +45,7 @@ template<class T>
 		delete data;
 	}
 }
+//________________________________________________________________________________________
 
 template<class T>
 void ÑVector<T>::fill(T value)
@@ -55,12 +60,14 @@ void ÑVector<T>::fill(T value)
 		data[i] = value;
 	}
 }
+//________________________________________________________________________________________
 
 template<class T>
 unsigned int ÑVector<T>::getSize()
 {
 	return size;
 }
+//________________________________________________________________________________________
 
 template<class T>
 T & ÑVector<T>::operator[](int i)

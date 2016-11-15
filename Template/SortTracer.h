@@ -4,6 +4,9 @@
 
 #include <iostream>
 
+// The example verifies tracer (logger) for std::sort algorithm
+// Book: "C++ Templates: The Complete Guide" by David Vandevoorde & Nicolai M. Josuttis
+
 class SortTracer
 {
 	private:
@@ -25,31 +28,13 @@ class SortTracer
 		}
 
 		public:
-			static long creations()
-			{
-				return n_created;
-			}
+			static long creations()    { return n_created; }
+			static long destructions() { return n_destroyed; }
+			static long assignments()  { return n_assigned; }
+			static long comparisons()  { return n_compared; }
+			static long max_live()     { return n_max_live; }
 
-			static long destructions()
-			{
-				return n_destroyed;
-			}
-
-			static long assignments()
-			{
-				return n_assigned;
-			}
-
-			static long comparisons()
-			{
-				return n_compared;
-			}
-
-			static long max_live()
-			{
-				return n_max_live;
-			}
-
+			//________________________________________________________________________________________
 			SortTracer(int v = 0) : value(v), generation(1)
 			{
 				++n_created;
@@ -61,6 +46,7 @@ class SortTracer
 				         <<")\n";
 			}
 
+			//________________________________________________________________________________________
 			SortTracer(SortTracer const& b) : value(b.value), generation(b.generation + 1)
 			{
 				++n_created;
@@ -72,6 +58,7 @@ class SortTracer
 				         <<")\n";
 			}
 
+			//________________________________________________________________________________________
 			~SortTracer()
 			{
 				++n_destroyed;
@@ -82,6 +69,7 @@ class SortTracer
 				         <<n_created - n_destroyed<<")\n";
 			}
 
+			//________________________________________________________________________________________
 			SortTracer& operator = (SortTracer const& b)
 			{
 				++n_assigned;
@@ -95,6 +83,7 @@ class SortTracer
 				return *this;
 			}
 
+			//________________________________________________________________________________________
 			friend bool operator < (SortTracer const& a, SortTracer const& b)
 			{
 				++n_compared;
@@ -107,12 +96,13 @@ class SortTracer
 				return a.value < b.value;
 			}
 
+			//________________________________________________________________________________________
 			int val() const
 			{
 				return value;
 			}
 };
 
-void TrcStdSort();
+void TrcStdSort(); // defined in SortTracer.cpp file
 
 #endif
