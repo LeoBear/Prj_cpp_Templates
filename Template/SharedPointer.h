@@ -11,25 +11,26 @@ class SharedPointer
 {
 
 	T* ptr;
-	int count;
+	int *pCount;
 
 public:
 
 	SharedPointer(T* t)
 	{
 		ptr = t;
-		count = 1;
+		pCount = new int();
+		*pCount = 1;
 
-		std::cout <<"SharedPointer(): count = " << count << std::endl;
+		std::cout <<"SharedPointer(): pCount = " << *pCount << std::endl;
 
 	}
 
 	~SharedPointer()
 	{
-		count--;
-		if (0 == count) { delete ptr; }
+		(*pCount)--;
+		if (0 == (*pCount)) { delete ptr; }
 
-		std::cout <<"~SharedPointer(): count = " << count << std::endl;
+		std::cout <<"~SharedPointer(): pCount = " << *pCount << std::endl;
 
 	}
 
@@ -47,10 +48,10 @@ template<class T>
 T& SharedPointer<T>::operator=(const SharedPointer& ptr)
 {
 	this->ptr = ptr.ptr;
-	ptr.count++;
-	this->count = ptr.count;
+	(*(ptr.pCount))++;
+	this->pCount = ptr.pCount;
 
-	std::cout << "inside assignment operator\n";
+	std::cout<<"Assignment operator"<< *(this->count) <<std::endl;
 
 	return *this;
 }
@@ -60,10 +61,10 @@ template<class T>
 SharedPointer<T>::SharedPointer(const SharedPointer& ptr)
 {
 	this->ptr = ptr.ptr;
-	ptr.count++;
-	this->count = ptr.count;
+	(*(ptr.pCount))++;
+	this->pCount = ptr.pCount;
 
-	std::cout << "inside copy constructor\n";
+	std::cout<<"Copy Constructor: pCount = "<< *(this->pCount) <<std::endl;
 }
 
 //________________________________________________________________________________________
