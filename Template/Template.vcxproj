@@ -118,12 +118,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="InferTypeTemplate.h" />
     <ClInclude Include="RestrictedTmplExpansion.h" />
     <ClInclude Include="ShallowChecks.h" />
     <ClInclude Include="SharedPointer.h" />
     <ClInclude Include="SmartPtr_TTP.h" />
     <ClInclude Include="SortTracer.h" />
     <ClInclude Include="Template.h" />
+    <ClInclude Include="TupleVariadic.h" />
     <ClInclude Include="TypeDef.h" />
   </ItemGroup>
   <ItemGroup>

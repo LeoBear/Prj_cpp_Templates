@@ -36,6 +36,12 @@
     <ClInclude Include="RestrictedTmplExpansion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TupleVariadic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InferTypeTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
