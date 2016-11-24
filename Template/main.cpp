@@ -1,11 +1,15 @@
 
+#include <vector>
+#include <string>
 #include <iostream>
 
 #include "TypeDef.h"
 #include "Template.h"
 #include "SortTracer.h"
+#include "TupleVariadic.h"
 #include "ShallowChecks.h"
 #include "SharedPointer.h"
+#include "InferTypeTemplate.h"
 #include "RestrictedTmplExpansion.h"
 
 //___Example 1___
@@ -50,12 +54,54 @@ void main()
 	//double res2 = sum(2, 2, 2.2, 2.1, 2.0);
 
 	//___Example 5: ___
-	//SharedPointer<int> p = new int(5);
+	//SharedPointer<int> p1 = new int(5);
+	//{
+	//	SharedPointer<int> p2 = p1;
+	//}
+
 	//SharedPointerAlloc<int> pAlloc( new int(5), 4 );
 
 	//___Example 6: ___
-	S s;
-	Wrapper<S> w(s);
-	f(w);
-	f(s);
+	//S s1;
+	//Wrapper<S> w(s1);
+
+	//f(w);
+	//f(s1);
+
+	//___Example 7: ___ Example of template instantiation
+	//      int   x = 2;
+	//const int  cx = x;
+	//const int& rx = x;
+
+	//foo1(x);
+	//foo1(cx);
+	//foo1(rx);
+
+	//std::cout << std::endl;
+
+	//foo2(x);
+	//foo2(cx);
+	//foo2(rx);
+
+	//std::cout << std::endl;
+
+	//foo3(x);
+	//foo3(cx);
+	//foo3(rx);
+	//foo3(28);
+
+	//std::cout << std::endl;
+
+	//foo4(x);
+	//foo4(cx);
+	//foo4(rx);
+	//foo4(28);
+
+	//std::cout << std::endl;
+
+	//___Example 8: ___ Variadic Template Class
+
+	//std::string s = "Hello";
+	//std::vector<int> v = { 1,22,3,4,5 };
+	//auto x = make_tuple(s, v, 1.2);
 }
