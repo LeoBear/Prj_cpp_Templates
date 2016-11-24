@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ArraySize.h" />
     <ClInclude Include="InferTypeTemplate.h" />
     <ClInclude Include="RestrictedTmplExpansion.h" />
     <ClInclude Include="ShallowChecks.h" />

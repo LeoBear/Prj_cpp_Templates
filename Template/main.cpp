@@ -5,6 +5,7 @@
 
 #include "TypeDef.h"
 #include "Template.h"
+#include "ArraySize.h"
 #include "SortTracer.h"
 #include "TupleVariadic.h"
 #include "ShallowChecks.h"
@@ -104,4 +105,9 @@ void main()
 	//std::string s = "Hello";
 	//std::vector<int> v = { 1,22,3,4,5 };
 	//auto x = make_tuple(s, v, 1.2);
+
+	//___Example 9: ___ Calculation size of array in compilation time
+	// 7 elements in array
+	int myArr[] = { 2, 33, 5, 32, 34, 55, 234 };
+	int newArr[arraySize(myArr)];
 }
